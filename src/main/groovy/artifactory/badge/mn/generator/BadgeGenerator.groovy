@@ -56,6 +56,6 @@ class BadgeGenerator {
         final def font = graphics.font
         final def diff = (height - (2 * margin)) / font.getLineMetrics(text, graphics.getFontRenderContext()).getHeight()
 
-        graphics.setFont(font.deriveFont(font.getSize() * diff))
+        graphics.setFont(font.deriveFont((font.getSize() * diff) as float))
     }
 }
