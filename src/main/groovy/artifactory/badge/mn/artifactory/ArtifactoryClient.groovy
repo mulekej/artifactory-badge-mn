@@ -1,8 +1,9 @@
 package artifactory.badge.mn.artifactory
 
-
+import io.micronaut.http.annotation.Header
 import io.micronaut.http.client.Client
 
-@Client("localhost:8081")
+@Client("http://artifactory.surescripts-dev.qa:8080")
+@Header(name = "Authorization", value = "${}")
 interface ArtifactoryClient extends ArtifactoryApi {
 }
