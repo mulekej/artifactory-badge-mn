@@ -8,11 +8,11 @@ micronaut:
         port: 9940
 
 artifactory:
-  host: artifactory.surescripts-dev.qa
-  port: 8080
+  host: localhost
+  port: 8081
   user:
-    name: deployer
-    token: Pass1234
+    name: username
+    token: password
 
 ---
 #micronaut:
