@@ -7,6 +7,13 @@ micronaut:
     server:
         port: 9940
 
+artifactory:
+  host: artifactory.surescripts-dev.qa
+  port: 8080
+  user:
+    name: deployer
+    token: Pass1234
+
 ---
 #micronaut:
 #  security:

@@ -4,6 +4,7 @@ import java.awt.*
 import java.awt.image.BufferedImage
 
 class BadgeGenerator {
+
     private static final def MAX_WIDTH = 200
     private static final def MAX_HEIGHT = 20
     private static final def TEXT_MARGIN = 2
