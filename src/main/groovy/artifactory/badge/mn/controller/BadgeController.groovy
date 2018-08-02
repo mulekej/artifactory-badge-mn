@@ -2,12 +2,10 @@ package artifactory.badge.mn.controller
 
 import artifactory.badge.mn.artifactory.ArtifactoryClient
 import artifactory.badge.mn.generator.BadgeGenerator
-import io.micronaut.http.HttpResponseFactory
 import io.micronaut.http.HttpStatus
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Get
 import io.micronaut.http.annotation.Produces
-import io.micronaut.http.simple.SimpleHttpResponseFactory
 
 import javax.imageio.ImageIO
 
@@ -15,11 +13,9 @@ import javax.imageio.ImageIO
 class BadgeController {
 
     ArtifactoryClient client
-    HttpResponseFactory httpResponseFactory
 
     BadgeController(ArtifactoryClient client) {
         this.client = client
-        this.httpResponseFactory = new SimpleHttpResponseFactory()
     }
 
     @Get("/")

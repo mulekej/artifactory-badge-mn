@@ -7,6 +7,12 @@ micronaut:
     server:
         port: 9940
 
+endpoints:
+    health:
+        details-visible: ANONYMOUS
+        status:
+            http-mapping: {UP: 200, UNKOWN: 421, DOWN: 508}
+
 ---
 #micronaut:
 #  security:
