@@ -11,6 +11,8 @@ import io.micronaut.http.simple.SimpleHttpResponseFactory
 
 import javax.imageio.ImageIO
 
+import static artifactory.badge.mn.util.Constants.VERSION_NOT_FOUND
+
 @Controller("/artifacts")
 class BadgeController {
 
@@ -30,8 +32,8 @@ class BadgeController {
     @Get("/{repo}/{groupId}/{artifactId}")
     @Produces("image/png")
     byte[] getBadge(String repo, String groupId, String artifactId) {
-        def result = client.findVersion(groupId, artifactId, repo)
-        def badge = BadgeGenerator.generate("artifactory", result, true)
+        def result = client.findVersion(groupId, artifactId, repo)?: VERSION_NOT_FOUND
+        def badge = BadgeGenerator.generate(artifactId, result, result != VERSION_NOT_FOUND)
         def outputStream = new ByteArrayOutputStream()
         ImageIO.write(badge, "png", outputStream)
         outputStream.toByteArray()
